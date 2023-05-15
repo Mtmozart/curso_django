@@ -12,10 +12,24 @@ Class-based views
 Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+    Não é ideal que eu coloque todas as rotas em um só arquivo
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+
+""" Método fácil, porém não tão recomendado
+
+from core.views import index, contact
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', index),
+    path('contact', contact)
+]
+
+"""
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('core.urls')),
+
 ]
