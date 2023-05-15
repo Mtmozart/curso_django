@@ -29,7 +29,7 @@ urlpatterns = [
 """
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('adm-site/', admin.site.urls),
     path('', include('core.urls')),
 
 ]
